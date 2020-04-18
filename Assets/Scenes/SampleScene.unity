@@ -5515,6 +5515,26 @@ ParticleSystemForceField:
         m_RotationOrder: 4
     m_MultiplyDragByParticleSize: 1
     m_MultiplyDragByParticleVelocity: 1
+--- !u!1 &2132819382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1132377207945959506, guid: 3ab69a2fc1d7c784e9726ccb983d5dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3775107213810209901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2132819384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132819382}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c58301cacb8ac14798dc6604e23e9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleMin: -75
+  angleMax: 10
 --- !u!1001 &3775107213810209901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5581,6 +5601,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097960687797007311, guid: 3ab69a2fc1d7c784e9726ccb983d5dfd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.3420201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097960687797007311, guid: 3ab69a2fc1d7c784e9726ccb983d5dfd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9396927
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097960687797007311, guid: 3ab69a2fc1d7c784e9726ccb983d5dfd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097960687797007311, guid: 3ab69a2fc1d7c784e9726ccb983d5dfd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097960687797007311, guid: 3ab69a2fc1d7c784e9726ccb983d5dfd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab69a2fc1d7c784e9726ccb983d5dfd, type: 3}
