@@ -5,8 +5,9 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public Transform target;
-    public bool bFreeForm;
+    public Transform player;
     public int testKeyCode;
+
     [Header("Free form")]
     public float freeDistance;
     public float maxDistance;
@@ -17,7 +18,11 @@ public class Fireball : MonoBehaviour
     public float farDistance = 0.5f;
     [Range(0, 1)] public float strictLerpFactorClose = 0.1f;
     [Range(0, 1)] public float strictLerpFactorFar = 0.1f;
-    
+    [Space]
+    [Header("Explosion")]
+    public GameObject explosionPrefab;
+    public Timer tExplosion;
+
     Rigidbody2D body;
 
 
@@ -80,16 +85,23 @@ public class Fireball : MonoBehaviour
     }
     void FixedUpdate()
     {
-
-        bFreeForm = Input.GetMouseButton(testKeyCode);
+        bool bFreeForm = Input.GetMouseButton(testKeyCode);
         if (bFreeForm || !StrictUpdate())
             FreeFormUpdate();
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(target.position, maxDistance);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.contactCount == 0 || !tExplosion.IsReadyRestart())
+            return;
 
+        Vector3 spawnPosition = collision.GetContact(0).point;
+        Vector2 toOther = transform.position - player.position;
+        Instantiate(explosionPrefab, spawnPosition, Quaternion.FromToRotation(Vector2.up, toOther));
+    }
 }
