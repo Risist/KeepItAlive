@@ -23,12 +23,15 @@ public class DevilController : MonoBehaviour
     public DevilBlackboard blackboard = new DevilBlackboard();
     Animator animator;
     new Rigidbody2D rigidbody;
+    HealthController health;
     
     void Start()
     {
         blackboard.player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
+        health = GetComponent<HealthController>();
+        health.onStaggerCallback = (data) => { animator.SetTrigger("Stagger"); };
 
         InitStates();
     }

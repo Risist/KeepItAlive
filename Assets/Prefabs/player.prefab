@@ -2541,7 +2541,9 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Positions: []
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -2669,7 +2671,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6113935327311994691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ea6bbdfb3a35974aef351b5ead788f, type: 3}
+  m_Script: {fileID: 11500000, guid: d08889e2d792201108743ff1375bfffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   portStart: {fileID: 6113935327311994691}
@@ -3001,7 +3003,9 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Positions: []
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -3344,7 +3348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9032235567612637593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ea6bbdfb3a35974aef351b5ead788f, type: 3}
+  m_Script: {fileID: 11500000, guid: d08889e2d792201108743ff1375bfffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   portStart: {fileID: 9032235567612637593}
