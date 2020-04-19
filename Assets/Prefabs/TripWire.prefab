@@ -298,7 +298,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7258180007401002873}
-  - component: {fileID: 23106666472129610}
+  - component: {fileID: 4386879200198235470}
+  - component: {fileID: 2873883590340473371}
   m_Layer: 0
   m_Name: TripWire
   m_TagString: Untagged
@@ -322,7 +323,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &23106666472129610
+--- !u!114 &4386879200198235470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -331,7 +332,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 7258180007401002875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ea6bbdfb3a35974aef351b5ead788f, type: 3}
+  m_Script: {fileID: 11500000, guid: 13875b53ef57822db946f0c9d4252eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invokeString:
+    m_PersistentCalls:
+      m_Calls: []
+  invokeStringDefaultParam: 
+  invokeInt:
+    m_PersistentCalls:
+      m_Calls: []
+  invokeIntDefaultParam: 0
+  invokeVector3:
+    m_PersistentCalls:
+      m_Calls: []
+  invokeVector3DefaultParam: {x: 0, y: 0, z: 0}
+  invokeVector2:
+    m_PersistentCalls:
+      m_Calls: []
+  invokeVector2Param: {x: 0, y: 0}
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  damageDataDefault:
+    damage: 0
+    staggerIncrease: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  invoke:
+    m_PersistentCalls:
+      m_Calls: []
+  tempPlayer: {fileID: 0}
+--- !u!114 &2873883590340473371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258180007401002875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08889e2d792201108743ff1375bfffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   portStart: {fileID: 7258180007343845141}
@@ -340,4 +381,4 @@ MonoBehaviour:
   tripped: 0
   maskLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
