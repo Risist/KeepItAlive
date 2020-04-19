@@ -28,6 +28,13 @@ public class HealthController : MonoBehaviour, IDamagable
         currentHealth = maxHealth;
     }
 
+    public void DealDamage(float damage, float stagger)
+    {
+        DamageData data = new DamageData();
+        data.damage = damage;
+        data.staggerIncrease = stagger;
+        DealDamage(data);
+    }
     public void DealDamage(DamageData data)
     {
         currentHealth -= data.damage;
