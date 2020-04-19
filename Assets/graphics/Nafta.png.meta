@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: 682be416435652f4daa70218bab32559
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 581172999322477728
+    second: Nafta_0
+  - first:
+      213: -2075918978350684072
+    second: Nafta_1
+  - first:
+      213: -5404686379034532299
+    second: Nafta_2
+  - first:
+      213: 3895208072095688146
+    second: Nafta_3
+  - first:
+      213: 1080665345134129428
+    second: Nafta_4
+  - first:
+      213: 7874560251913996998
+    second: Nafta_5
+  - first:
+      213: -1180274028644445729
+    second: Nafta_6
+  - first:
+      213: 4854652923705020831
+    second: Nafta_7
+  - first:
+      213: -7798680350665896071
+    second: Nafta_8
+  - first:
+      213: -5479866410441775074
+    second: Nafta_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +101,231 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Nafta_0
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 299
+        width: 842
+        height: 1327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a42aa183cdb01800800000000000000
+      internalID: 581172999322477728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_1
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1223
+        width: 408
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8586ae810bad033e0800000000000000
+      internalID: -2075918978350684072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_2
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 417
+        width: 956
+        height: 1161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536214f9f52bef4b0800000000000000
+      internalID: -5404686379034532299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_3
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1082
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d56f779a1f8e0630800000000000000
+      internalID: 3895208072095688146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 54
+        width: 454
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4117bc1e76b4ffe00800000000000000
+      internalID: 1080665345134129428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_5
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 378
+        width: 567
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca8eb1f3de084d60800000000000000
+      internalID: 7874560251913996998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_6
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 12
+        width: 359
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd157093603de9fe0800000000000000
+      internalID: -1180274028644445729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_7
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 321
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91df31fc113f5340800000000000000
+      internalID: 4854652923705020831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_8
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 41
+        width: 552
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f8dbd4a8585c390800000000000000
+      internalID: -7798680350665896071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nafta_9
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 77
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18e505888a93f3b0800000000000000
+      internalID: -5479866410441775074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -109,13 +109,23 @@ public class StateMachine
     {
         return behaviourStates[Random.Range(0, behaviourStates.Count)];
     }
+
+    static List<float> utilityCache = new List<float>();
     public State GetNextStateByUtility()
     {
+        utilityCache.Clear();
+
         float sum = 0;
         var behaviours = behaviourStates;
         for (int i = 0; i < behaviours.Count; ++i)
+        {
+            utilityCache.Add(0);
             if (behaviours[i].canEnter())
-                sum += Mathf.Clamp(behaviours[i].getUtility(), 0, float.MaxValue);
+            {
+                utilityCache[i] = (Mathf.Clamp(behaviours[i].getUtility(), 0, float.MaxValue));
+                sum += utilityCache[i];
+            }
+        }
 
         if (sum == 0)
             return null;
@@ -125,8 +135,7 @@ public class StateMachine
         float lastSum = 0;
         for (int i = 0; i < behaviours.Count; ++i)
         {
-            float utility = Mathf.Clamp(behaviours[i].getUtility(), 0, float.MaxValue);
-
+            float utility = utilityCache[i];
             if (behaviours[i].canEnter())
             {
                 if (randed >= lastSum && randed <= lastSum + utility)

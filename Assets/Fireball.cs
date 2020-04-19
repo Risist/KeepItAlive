@@ -24,14 +24,21 @@ public class Fireball : MonoBehaviour
     public LayerMask requiredExplosionMask;
     public GameObject explosionPrefab;
     public Timer tExplosion;
+    public float fadeoutCost = 1.0f;
+    [Range(0, 1)] public float minExplosionFadeout = 0.1f;
 
+    PlayerController playerController;
     Rigidbody2D body;
+    LightFadeout lightFadeout;
     bool bFreeForm;
+
 
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        lightFadeout = GetComponent<LightFadeout>();
+        playerController = transform.root.GetComponentInChildren<PlayerController>();
         transform.parent = null;
     }
 
@@ -88,14 +95,20 @@ public class Fireball : MonoBehaviour
     }
     void FixedUpdate()
     {
-        bFreeForm = Input.GetMouseButton(testKeyCode);
+        if (!player)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        bFreeForm = testKeyCode == 0 ? playerController.canUseTorchLeft : playerController.canUseTorchRight;
         if (bFreeForm || !StrictUpdate())
         {
             FreeFormUpdate();
         }
 
         foreach (var it in freeFormDamage)
-            it.enabled = bFreeForm;
+            it.enabled = lightFadeout.fadeoutPercent > minExplosionFadeout;
     }
 
     private void OnDrawGizmosSelected()
@@ -106,15 +119,24 @@ public class Fireball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // only do fire in free form
-        if (!bFreeForm)
+        //if (!bFreeForm)
+        //return;
+
+        if (!playerController.canPerformAction)
             return;
 
-        if (collision.contactCount == 0 || !tExplosion.IsReadyRestart())
+        if (!collision.gameObject || collision.contactCount == 0 || !tExplosion.IsReadyRestart())
             return;
 
         // ensure only specified masks will cause explosion
         if ((requiredExplosionMask.value & (1 << collision.gameObject.layer) ) == 0)
             return;
+
+        // 
+        if (lightFadeout.fadeoutPercent < minExplosionFadeout)
+            return;
+
+        lightFadeout.DecreaseLight(fadeoutCost);
 
         Vector3 spawnPosition = collision.GetContact(0).point;
         Vector2 toOther = transform.position - player.position;

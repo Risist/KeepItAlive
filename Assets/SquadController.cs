@@ -14,8 +14,10 @@ public class SquadController : MonoBehaviour
     public int squadCount;
     public float spawnRadius;
 
-    [Header("Staates")]
+    [Header("States")]
     public Timer tOffense;
+
+    public float ofenseChance = 0.000125f;
 
     List<GameObject> squadMembers = new List<GameObject>();
     public SquadBlackboard blackboard = new SquadBlackboard();
@@ -43,7 +45,7 @@ public class SquadController : MonoBehaviour
             {
                 blackboard.bCommandAttack = false;
             }
-        }else if (Random.value < 0.000125f)
+        }else if (Random.value < ofenseChance)
         {
             tOffense.Restart();
             blackboard.bCommandAttack = true;

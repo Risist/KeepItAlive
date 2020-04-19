@@ -71,6 +71,13 @@ public class Timer : MinimalTimer
     // how much time have to be elapsed from last reset to be ready
     public float cd = 1;
 
+    public float GetCompletionPercent()
+    {
+        if (cd != 0)
+            return Mathf.Clamp01(ElapsedTime() / cd);
+        else
+            return 1.0f;
+    }
 
     public void RestartRandom(float cdMin, float cdMax)
     {

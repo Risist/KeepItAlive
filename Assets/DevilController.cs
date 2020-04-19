@@ -20,6 +20,17 @@ public class DevilController : MonoBehaviour
     public bool canRotate = true;
     public bool canPerformAction = true;
 
+    [Header("Audio")]
+    [Range(0, 1)] public float idleTalkChance;
+    public AudioClip[] idleTalk;
+    [Range(0, 1)] public float chargeTalkChance;
+    public AudioClip[] chargeTalk;
+
+    [Range(0, 1)] public float dmgTalkChance;
+    public AudioClip[] dmgTalk;
+    
+    AudioSource speach;
+
     public DevilBlackboard blackboard = new DevilBlackboard();
     Animator animator;
     new Rigidbody2D rigidbody;
@@ -31,7 +42,20 @@ public class DevilController : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         health = GetComponent<HealthController>();
-        health.onStaggerCallback = (data) => { animator.SetTrigger("Stagger"); };
+        speach = GetComponent<AudioSource>();
+        speach.pitch = Random.Range(1.2f, 1.65f);
+        health.onStaggerCallback = (data) =>
+        {
+            animator.SetTrigger("Stagger");
+        };
+        health.onDamageCallback += (data) =>
+        {
+            if (Random.value < dmgTalkChance)
+            {
+                int id = Random.Range(0, dmgTalk.Length);
+                speach.PlayOneShot(dmgTalk[id]);
+            }
+        };
 
         InitStates();
     }
@@ -48,7 +72,7 @@ public class DevilController : MonoBehaviour
             {
                 RandomBlink(0.00075f);
                 RandomScare(0.00125f);
-                
+                Talk();
             })
 
             .SetReturnState(tChangeState.IsReady)
@@ -62,6 +86,7 @@ public class DevilController : MonoBehaviour
             {
                 MoveTo(blackboard.destination, 10, 1);
                 RotateTo(blackboard.destination, 0.1f);
+                Talk();
 
                 Avoid(5, 3);
                 Avoid(4, 5);
@@ -76,9 +101,12 @@ public class DevilController : MonoBehaviour
             .AddOnBegin(() => tChangeState.RestartRandom(0.75f, 1.5f))
             .AddOnUpdate(() =>
             {
+                Talk();
+                RandomBlink(0.00075f);
+                if (!blackboard.player)
+                    return;
                 Vector2 playerPosition = blackboard.player.transform.position;
 
-                RandomBlink(0.00075f);
                 if (!IsCloseTo(playerPosition, 12))
                     RandomScare(0.0025f);
 
@@ -97,22 +125,26 @@ public class DevilController : MonoBehaviour
         var stateAttack = stateMachine.AddNewState()
             .AddOnBegin(() => tChangeState.RestartRandom(1.25f, 2.5f))
             .AddOnUpdate(() => {
+                
+                RandomBlink(0.00075f);
+                Talk();
+                if (!blackboard.player)
+                    return;
                 Vector2 playerPosition = blackboard.player.transform.position;
 
-                RandomBlink(0.00075f);
-
+                
                 RotateTo(playerPosition, 0.1f);
-                MoveTo(playerPosition, 10, 4);
+                MoveTo(playerPosition, 20, 4);
 
                 Avoid(5, 4);
                 Avoid(4, 6);
                 Avoid(3, 8);
 
                 if (IsCloseTo(playerPosition, 7))
-                    Hit(0.01f);
+                    Hit(0.05f);
                 else
                 {
-                    float chance = IsCloseTo(playerPosition, 12) ? 0.02f : 0.05f; 
+                    float chance = IsCloseTo(playerPosition, 12) ? 0.025f : 0.065f; 
                     RandomDash(chance);
                 }
             })
@@ -129,9 +161,11 @@ public class DevilController : MonoBehaviour
             .AddOnBegin(() => blackboard.destination = GetAwayPosition(blackboard.player.transform.position, 15))
             .AddOnUpdate(() =>
             {
+                Debug.DrawLine(blackboard.destination, blackboard.destination + Vector2.up, Color.red);
                 MoveTo(blackboard.destination, 35, 1);
                 RotateTo(blackboard.destination, 0.1f);
-
+                
+                Talk();
                 RandomDash(0.0065f);
 
                 Avoid(5, 3);
@@ -139,17 +173,69 @@ public class DevilController : MonoBehaviour
                 Avoid(3, 6);
             })
 
-            .SetCanEnter(() => IsCloseTo(blackboard.player.transform.position, 14) && !blackboard.bCommandAttack )
+            .SetCanEnter(() => blackboard.player && IsCloseTo(blackboard.player.transform.position, 14) && !blackboard.bCommandAttack )
             .SetReturnState(tChangeState.IsReady)
             .SetGetNextState(stateMachine.GetNextStateByUtility)
-            .SetUtility( () => 25 );
+            .SetUtility( () => 5 );
             ;
+
+        var stateAwayFromLight = stateMachine.AddNewState()
+            .AddOnBegin(() => tChangeState.RestartRandom(0.5f, 1.5f))
+            .AddOnBegin(() => blackboard.destination = (Vector2)transform.position + LightMarker.GetFleeDir(transform.position).normalized * 15)
+            .AddOnUpdate(() =>
+            {
+                Vector2 fleeDir = LightMarker.GetFleeDir(transform.position).normalized;
+                Debug.DrawRay(transform.position, fleeDir*5, Color.green);
+
+                Vector2 destination = (Vector2) transform.position + fleeDir*5;
+                Debug.DrawLine(destination, destination + Vector2.up, Color.cyan);
+
+
+                Talk();
+                MoveTo(blackboard.destination, 20, 1);
+                RotateTo(blackboard.destination, 0.1f);
+
+                RandomDash(0.00025f);
+
+                Avoid(5, 3);
+                Avoid(4, 5);
+                Avoid(3, 6);
+            })
+
+            .SetCanEnter(() => 
+                // repeat to ensure that random will catch up some lights
+                (LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 15*15 ) 
+                
+                && !blackboard.bCommandAttack )
+            .SetReturnState(tChangeState.IsReady)
+            .SetGetNextState(stateMachine.GetNextStateByUtility)
+            .SetUtility(() => 20);
+        ;
 
         var stateStayCloseToPlayer = stateMachine.AddNewState()
             .AddOnBegin(() => tChangeState.RestartRandom(0.75f, 1.5f))
             .AddOnBegin(() => blackboard.destination = GetAwayPosition(blackboard.player.transform.position, 15))
             .AddOnUpdate(() =>
             {
+                Talk();
+                if (!blackboard.player)
+                    return;
+
                 Vector2 playerPosition = blackboard.player.transform.position;
                 MoveTo(playerPosition, 10, 20);
                 RotateTo(playerPosition, 0.1f);
@@ -159,10 +245,10 @@ public class DevilController : MonoBehaviour
                 Avoid(3, 6);
             })
 
-            .SetCanEnter(() => !IsCloseTo(blackboard.player.transform.position, 20) && !blackboard.bCommandAttack)
+            .SetCanEnter(() => blackboard.player && !IsCloseTo(blackboard.player.transform.position, 20) && !blackboard.bCommandAttack)
             .SetReturnState(tChangeState.IsReady)
             .SetGetNextState(stateMachine.GetNextStateByUtility)
-            .SetUtility(() => 0.5f);
+            .SetUtility(() => 1.5f);
         ;
 
         // need for a way for a controlled transition force 
@@ -187,7 +273,7 @@ public class DevilController : MonoBehaviour
     Vector2 GetAwayPosition(Vector2 from, float distance)
     {
         Vector2 toDestination = from - (Vector2)transform.position;
-        return (Vector2)transform.position - toDestination.normalized*distance;
+        return from - toDestination.normalized*distance;
     }
 
     /// Actions
@@ -210,6 +296,27 @@ public class DevilController : MonoBehaviour
     {
         if (canPerformAction && Random.value < chance)
             animator.SetTrigger("Hit");
+    }
+
+    // audio
+    void Talk()
+    {
+        if (blackboard.bCommandAttack)
+        {
+            if (!speach.isPlaying && Random.value < chargeTalkChance)
+            {
+                int id = Random.Range(0, chargeTalk.Length);
+                speach.PlayOneShot(chargeTalk[id]);
+            }
+        }
+        else
+        {
+            if (!speach.isPlaying && Random.value < idleTalkChance)
+            {
+                int id = Random.Range(0, idleTalk.Length);
+                speach.PlayOneShot(idleTalk[id]);
+            }
+        }
     }
 
     /// Movement

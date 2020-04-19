@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 951d15468a99f6d4489787e7c80acb15
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2979021670009706247
+    second: "Ka\u0142u\u017Ce_0"
+  - first:
+      213: 3633464645717227757
+    second: "Ka\u0142u\u017Ce_1"
+  - first:
+      213: -3384152044235184211
+    second: "Ka\u0142u\u017Ce_2"
+  - first:
+      213: -1647366836222123870
+    second: "Ka\u0142u\u017Ce_3"
+  - first:
+      213: -4715190012605889582
+    second: "Ka\u0142u\u017Ce_4"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +86,126 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Ka\u0142u\u017Ce_0"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 858
+        width: 604
+        height: 748
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f861ec139368a6d0800000000000000
+      internalID: -2979021670009706247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ka\u0142u\u017Ce_1"
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 327
+        width: 567
+        height: 1052
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de87ae728d8ac6230800000000000000
+      internalID: 3633464645717227757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ka\u0142u\u017Ce_2"
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 851
+        width: 728
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7237155a31901d0800000000000000
+      internalID: -3384152044235184211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ka\u0142u\u017Ce_3"
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 67
+        width: 641
+        height: 638
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0a83037906329e0800000000000000
+      internalID: -1647366836222123870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ka\u0142u\u017Ce_4"
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 116
+        width: 579
+        height: 636
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3082a6aa7409eb0800000000000000
+      internalID: -4715190012605889582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
