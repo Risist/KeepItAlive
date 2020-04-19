@@ -7,8 +7,8 @@ public class DamageData
 {
     public float damage;
     public float staggerIncrease;
-    [System.NonSerialized] public Vector3 position;
-    [System.NonSerialized] public Vector3 direction;
+    [HideInInspector] public Vector3 position;
+    [HideInInspector] public Vector3 direction;
 }
 
 /// interface for all objects that can be damaged
