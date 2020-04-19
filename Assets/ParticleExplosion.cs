@@ -9,7 +9,7 @@ public class ParticleExplosion : MonoBehaviour
     public Timer tReverse;
     [Range(0, 1)] public float lightLerpFactor = 0.1f;
     ParticleSystem system;
-    Light2D light;
+    new Light2D light;
     float initialIntensity;
 
     private void Start()

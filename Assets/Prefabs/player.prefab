@@ -2343,7 +2343,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.4
 --- !u!250 &3829734642154330060
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -2351,12 +2351,12 @@ PointEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3860685381883724640}
-  m_Enabled: 0
+  m_Enabled: 1
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 512
-  m_ForceMagnitude: -500
+  m_ForceMagnitude: 500
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -2382,14 +2382,46 @@ MonoBehaviour:
   freeDistance: 0.5
   maxDistance: 7
   correctionFactor: 60
+  freeFormDamage:
+  - {fileID: 5531979029692885363}
   closeDistance: 2.5
   farDistance: 6
   strictLerpFactorClose: 0.5
   strictLerpFactorFar: 0.5
+  requiredExplosionMask:
+    serializedVersion: 2
+    m_Bits: 768
   explosionPrefab: {fileID: 3127277483276456750, guid: 48b493fa0dcb318499f526439a7151a0,
     type: 3}
   tExplosion:
     cd: 0.1
+--- !u!114 &5531979029692885363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860685381883724640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb7462de24fcb34095a105f5c5bb2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDataOnce:
+    damage: 0
+    staggerIncrease: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataContinous:
+    damage: 1
+    staggerIncrease: 3
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataEnter:
+    damage: 0
+    staggerIncrease: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
 --- !u!1 &5144202523233258231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,7 +2813,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.4
 --- !u!250 &8579564798868896187
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -2789,12 +2821,12 @@ PointEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7145701600448861501}
-  m_Enabled: 0
+  m_Enabled: 1
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 512
-  m_ForceMagnitude: -500
+  m_ForceMagnitude: 500
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -2820,14 +2852,46 @@ MonoBehaviour:
   freeDistance: 0.5
   maxDistance: 7
   correctionFactor: 60
+  freeFormDamage:
+  - {fileID: 2702165751770928017}
   closeDistance: 2.5
   farDistance: 6
   strictLerpFactorClose: 0.5
   strictLerpFactorFar: 0.5
+  requiredExplosionMask:
+    serializedVersion: 2
+    m_Bits: 768
   explosionPrefab: {fileID: 3127277483276456750, guid: 48b493fa0dcb318499f526439a7151a0,
     type: 3}
   tExplosion:
     cd: 0.1
+--- !u!114 &2702165751770928017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145701600448861501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb7462de24fcb34095a105f5c5bb2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDataOnce:
+    damage: 0
+    staggerIncrease: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataContinous:
+    damage: 1
+    staggerIncrease: 3
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataEnter:
+    damage: 0
+    staggerIncrease: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
 --- !u!1 &7221450875715590954
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,15 +3842,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb516137a3ad9fb478a2ea7671a3dcb2, type: 3}
---- !u!4 &8579525409670870018 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1570122111958082780, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7123191967099506910}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3860685381883724640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6289630634492613566, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7123191967099506910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8579525409670870018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1570122111958082780, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
     type: 3}
   m_PrefabInstance: {fileID: 7123191967099506910}
   m_PrefabAsset: {fileID: 0}

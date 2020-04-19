@@ -139,10 +139,10 @@ public class DevilController : MonoBehaviour
                 Avoid(3, 6);
             })
 
-            .SetCanEnter(() => IsCloseTo(blackboard.player.transform.position, 17) && !blackboard.bCommandAttack )
+            .SetCanEnter(() => IsCloseTo(blackboard.player.transform.position, 14) && !blackboard.bCommandAttack )
             .SetReturnState(tChangeState.IsReady)
             .SetGetNextState(stateMachine.GetNextStateByUtility)
-            .SetUtility( () => 40 );
+            .SetUtility( () => 25 );
             ;
 
         var stateStayCloseToPlayer = stateMachine.AddNewState()

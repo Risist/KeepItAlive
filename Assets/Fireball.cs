@@ -12,6 +12,7 @@ public class Fireball : MonoBehaviour
     public float freeDistance;
     public float maxDistance;
     public float correctionFactor;
+    public DamageOnCollision[] freeFormDamage;
 
     [Header("Follow strict")]
     public float closeDistance = 0.5f;
@@ -20,10 +21,12 @@ public class Fireball : MonoBehaviour
     [Range(0, 1)] public float strictLerpFactorFar = 0.1f;
     [Space]
     [Header("Explosion")]
+    public LayerMask requiredExplosionMask;
     public GameObject explosionPrefab;
     public Timer tExplosion;
 
     Rigidbody2D body;
+    bool bFreeForm;
 
 
     void Start()
@@ -85,9 +88,14 @@ public class Fireball : MonoBehaviour
     }
     void FixedUpdate()
     {
-        bool bFreeForm = Input.GetMouseButton(testKeyCode);
+        bFreeForm = Input.GetMouseButton(testKeyCode);
         if (bFreeForm || !StrictUpdate())
+        {
             FreeFormUpdate();
+        }
+
+        foreach (var it in freeFormDamage)
+            it.enabled = bFreeForm;
     }
 
     private void OnDrawGizmosSelected()
@@ -97,7 +105,15 @@ public class Fireball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // only do fire in free form
+        if (!bFreeForm)
+            return;
+
         if (collision.contactCount == 0 || !tExplosion.IsReadyRestart())
+            return;
+
+        // ensure only specified masks will cause explosion
+        if ((requiredExplosionMask.value & (1 << collision.gameObject.layer) ) == 0)
             return;
 
         Vector3 spawnPosition = collision.GetContact(0).point;
