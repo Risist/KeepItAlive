@@ -21,6 +21,9 @@ public class DamageOnCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (!enabled)
+            return;
+
         var damagable = other.GetComponent<IDamagable>();
         damageDataEnter.position = transform.position;
         damageDataContinous.position = transform.position;
@@ -35,6 +38,9 @@ public class DamageOnCollision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!enabled)
+            return;
+
         var damagable = other.GetComponent<IDamagable>();
         damageDataEnter.position = transform.position;
         damageDataContinous.position = transform.position;
@@ -50,6 +56,9 @@ public class DamageOnCollision : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (!enabled)
+            return;
+
         var damagable = collision.gameObject.GetComponent<IDamagable>();
         damageDataEnter.position = transform.position;
         damageDataContinous.position = transform.position;
@@ -63,6 +72,9 @@ public class DamageOnCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (!enabled)
+            return;
+
         var damagable = collision.gameObject.GetComponent<IDamagable>();
         damageDataEnter.position = transform.position;
         damageDataContinous.position = transform.position;

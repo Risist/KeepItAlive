@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 4455522453831110566}
   - component: {fileID: 2854570801514947793}
   - component: {fileID: 4065752927323662499}
+  - component: {fileID: 3488815190460041344}
   m_Layer: 9
   m_Name: damage
   m_TagString: Untagged
@@ -367,6 +368,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &3488815190460041344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5751354217673687460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb7462de24fcb34095a105f5c5bb2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDataOnce:
+    damage: 4
+    staggerIncrease: 1
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataContinous:
+    damage: 0.5
+    staggerIncrease: 0.25
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataEnter:
+    damage: 0
+    staggerIncrease: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
 --- !u!1 &6995496202733795283
 GameObject:
   m_ObjectHideFlags: 0
