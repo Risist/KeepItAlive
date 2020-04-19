@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Mechanism))]
 public class TripWire : MonoBehaviour
 {
     public GameObject portStart;
@@ -9,9 +9,12 @@ public class TripWire : MonoBehaviour
     public LineRenderer lineRenderer;
     public bool tripped = false;
     public LayerMask maskLayers;
+    Mechanism mechanism;
 
     public void Start() {
         lineRenderer.positionCount = 2;
+        mechanism = GetComponent<Mechanism>();
+
     }
     public void Update() {
         if (!tripped)
@@ -24,7 +27,7 @@ public class TripWire : MonoBehaviour
             if (Physics2D.Raycast(origin, direction, direction.magnitude,maskLayers))
             {
                 tripped = true;
-
+                mechanism.trip();
             }
 
 

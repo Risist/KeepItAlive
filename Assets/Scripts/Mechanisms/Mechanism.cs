@@ -28,7 +28,7 @@ public class Mechanism : MonoBehaviour {
 
     public NoArgProcedure invoke;
 
-    void trip()
+    public void trip()
     {
         invokeString.Invoke(invokeStringDefaultParam);
         invokeInt.Invoke(invokeIntDefaultParam);
