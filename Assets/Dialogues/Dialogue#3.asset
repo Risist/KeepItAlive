@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03eb183c2f273bb178547714019f0f57, type: 3}
+  m_Name: Dialogue#3
+  m_EditorClassIdentifier: 
+  text: This is testing Branching
+  optionA: {fileID: 11400000, guid: ff16757e347fd0512843c6cad6a924e0, type: 2}
+  optionAText: Loopback
+  optionB: {fileID: 11400000, guid: 0ed855c82f7de904a9a977912e4e32f4, type: 2}
+  optionBText: Follow

@@ -14,7 +14,6 @@ public class TripWire : MonoBehaviour
     public void Start() {
         lineRenderer.positionCount = 2;
         mechanism = GetComponent<Mechanism>();
-
     }
     public void Update() {
         if (!tripped)

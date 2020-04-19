@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mechanism : MonoBehaviour {
+public class Mechanism : MonoBehaviour
+{
     [System.Serializable]
-    public class StringProcedure : UnityEngine.Events.UnityEvent<string> {}
+    public class StringProcedure : UnityEngine.Events.UnityEvent<string> { }
     [System.Serializable]
-    public class IntProcedure : UnityEngine.Events.UnityEvent<int>{}
+    public class IntProcedure : UnityEngine.Events.UnityEvent<int> { }
     [System.Serializable]
-    public class Vector3Procedure : UnityEngine.Events.UnityEvent<Vector3>{}
+    public class Vector3Procedure : UnityEngine.Events.UnityEvent<Vector3> { }
     [System.Serializable]
-    public class Vector2Procedure : UnityEngine.Events.UnityEvent<Vector2>{}
+    public class Vector2Procedure : UnityEngine.Events.UnityEvent<Vector2> { }
+
     [System.Serializable]
-    public class DamageEvent : UnityEngine.Events.UnityEvent<DamageData> { }
+    public class NoArgProcedure : UnityEngine.Events.UnityEvent { }
+
     [System.Serializable]
-    public class NoArgProcedure : UnityEngine.Events.UnityEvent {}
+    public class Float2Procedure : UnityEngine.Events.UnityEvent<float, float> { }
 
     public StringProcedure invokeString;
     public string invokeStringDefaultParam;
@@ -28,8 +31,10 @@ public class Mechanism : MonoBehaviour {
     public Vector2Procedure invokeVector2;
     public Vector2 invokeVector2Param;
 
-    public DamageEvent dealDamage;
-    public DamageData damageDataDefault;
+    public Float2Procedure float2Proc;
+    public float paramADefault;
+    public float paramBDefault;
+
 
     public NoArgProcedure invoke;
 
@@ -40,7 +45,7 @@ public class Mechanism : MonoBehaviour {
         invokeInt.Invoke(invokeIntDefaultParam);
         invokeVector3.Invoke(invokeVector3DefaultParam);
         invokeVector2.Invoke(invokeVector2Param);
-        dealDamage.Invoke(damageDataDefault);
+        float2Proc.Invoke(paramADefault, paramBDefault);
         invoke.Invoke();
     }
 
