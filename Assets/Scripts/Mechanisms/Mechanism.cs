@@ -12,6 +12,8 @@ public class Mechanism : MonoBehaviour {
     [System.Serializable]
     public class Vector2Procedure : UnityEngine.Events.UnityEvent<Vector2>{}
     [System.Serializable]
+    public class DamageEvent : UnityEngine.Events.UnityEvent<DamageData> { }
+    [System.Serializable]
     public class NoArgProcedure : UnityEngine.Events.UnityEvent {}
 
     public StringProcedure invokeString;
@@ -26,7 +28,11 @@ public class Mechanism : MonoBehaviour {
     public Vector2Procedure invokeVector2;
     public Vector2 invokeVector2Param;
 
+    public DamageEvent dealDamage;
+    public DamageData damageDataDefault;
+
     public NoArgProcedure invoke;
+
 
     public void trip()
     {
@@ -34,6 +40,7 @@ public class Mechanism : MonoBehaviour {
         invokeInt.Invoke(invokeIntDefaultParam);
         invokeVector3.Invoke(invokeVector3DefaultParam);
         invokeVector2.Invoke(invokeVector2Param);
+        dealDamage.Invoke(damageDataDefault);
         invoke.Invoke();
     }
 
