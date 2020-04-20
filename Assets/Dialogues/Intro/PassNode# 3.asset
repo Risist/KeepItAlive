@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218255098f23662858c3b778b77d8758, type: 3}
   m_Name: PassNode# 3
   m_EditorClassIdentifier: 
-  text: Be fearless and destroy them or they will summon hell to earth.
-  nextNode: {fileID: 11400000, guid: 3cd54b908e525419096e149d63478afc, type: 2}
+  text: What do we do now?
+  nextNode: {fileID: 11400000, guid: 8bfc4c6882f8bb2459975a7b9d3c8cfe, type: 2}

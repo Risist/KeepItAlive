@@ -12,7 +12,7 @@ public class HealPlayer : MonoBehaviour
             var hp = collision.gameObject.GetComponent<HealthController>();
             if (hp)
             {
-                hp.currentHealth += healValue * Time.fixedDeltaTime;
+                hp.DealDamage(-healValue * Time.fixedDeltaTime, 0);
             }
         }
     }

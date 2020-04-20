@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3b696258e8f1ea448343366fd283536, type: 3}
-  m_Name: Root
+  m_Script: {fileID: 11500000, guid: 999cfae4a43f480c68865d4075a32ccc, type: 3}
+  m_Name: ActionNode#
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 11400000, guid: c222dc38d70dc7745a35e1ddcca68f7f, type: 2}
+  text: you can lit them by touching something already burning
+  action:
+    m_PersistentCalls:
+      m_Calls: []

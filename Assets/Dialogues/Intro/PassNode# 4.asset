@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218255098f23662858c3b778b77d8758, type: 3}
   m_Name: PassNode# 4
   m_EditorClassIdentifier: 
-  text: Go now, Blessed One of Sacred Fire Religion.
-  nextNode: {fileID: 11400000, guid: 3c4101fdc8b4f0615b0318371426c424, type: 2}
+  text: Ok, fine, let's see what we've got
+  nextNode: {fileID: 11400000, guid: 5514f5997bb2cd24bb83675af6837006, type: 2}

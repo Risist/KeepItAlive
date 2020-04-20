@@ -33,6 +33,9 @@ public class AllyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!player)
+            return;
+
         RotateTo(player.transform.position, 0.1f);
     }
 }
