@@ -45,10 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.956
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.4984372, b: 0.11792451, a: 1}
   m_Intensity: 0.75
-  m_LightVolumeOpacity: 0.391
+  m_LightVolumeOpacity: 0.258
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -58,8 +58,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 2.8
-  m_PointLightOuterRadius: 30
+  m_PointLightInnerRadius: 1.03
+  m_PointLightOuterRadius: 51.6
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -82,6 +82,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6796152022575837852}
   - component: {fileID: 6796152022575837853}
+  - component: {fileID: 2891869629051335025}
+  - component: {fileID: 3054945025530335055}
+  - component: {fileID: 2463291031960583209}
   m_Layer: 0
   m_Name: campfire
   m_TagString: Untagged
@@ -142,7 +145,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -400
   m_Sprite: {fileID: 21300000, guid: 9004948877f253d5589f6c40f773385d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,6 +157,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2891869629051335025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796152022575837854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc07f6923bbfdd409da1478a1cf0abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myFadeout: {fileID: 8569540716407777960}
+  damageUnlitScale: 0
+--- !u!114 &3054945025530335055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796152022575837854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad2c39aab73bb94ab9cf9d5dcaf7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &2463291031960583209
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796152022575837854}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.22
 --- !u!1 &6807404169736364707
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +210,7 @@ GameObject:
   - component: {fileID: 2088458597427156417}
   - component: {fileID: 9139736031537838475}
   - component: {fileID: 5830899965684260438}
+  - component: {fileID: 8569540716407777960}
   m_Layer: 0
   m_Name: fire (1)
   m_TagString: Untagged
@@ -4909,3 +4955,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8569540716407777960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6807404169736364707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e689498e2e788794b8917b31f33871f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeoutTimer:
+    cd: 200
+  initialLight: 0
+  autoRestart: 1
+  minLightDistance: 1
