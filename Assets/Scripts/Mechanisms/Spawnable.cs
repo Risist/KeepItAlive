@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
-public abstract class Spawnable : MonoBehaviour {
+public class Spawnable : MonoBehaviour {
 
     public float lifetime = 1.0f;
 
@@ -15,10 +15,13 @@ public abstract class Spawnable : MonoBehaviour {
         return spwn;
     }
 
-    public abstract void SetupLiftime();
+    public void SetupLiftime() {
+        DefaultLifetime();
+    }
     protected void DefaultLifetime() {
         Destroy(gameObject, lifetime);
     }
+
 
 }
 

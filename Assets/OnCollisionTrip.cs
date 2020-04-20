@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Mechanism))]
 public class OnCollisionTrip : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    Mechanism mecha;
+    void Start() {
+        mecha = GetComponent<Mechanism>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    void OnTriggerEnter2D(Collider2D c) {
+        mecha.trip();
     }
+
+    void OnCollisionEnter2D(Collision2D c) {
+        mecha.trip();
+    }
+
+
 }

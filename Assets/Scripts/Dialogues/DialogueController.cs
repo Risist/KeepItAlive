@@ -54,8 +54,10 @@ public class DialogueController : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        #if UNITY_EDITOR
         // Display the explosion radius when selected
         UnityEditor.Handles.color = Color.yellow;
         UnityEditor.Handles.DrawWireDisc(transform.position, transform.forward, triggerDist);
+        #endif
     }
 }
