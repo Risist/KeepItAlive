@@ -351,18 +351,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   invokeVector2Param: {x: 0, y: 0}
-  dealDamage:
+  float2Proc:
     m_PersistentCalls:
       m_Calls: []
-  damageDataDefault:
-    damage: 0
-    staggerIncrease: 0
-    position: {x: 0, y: 0, z: 0}
-    direction: {x: 0, y: 0, z: 0}
+  paramADefault: 0
+  paramBDefault: 0
   invoke:
     m_PersistentCalls:
       m_Calls: []
-  tempPlayer: {fileID: 0}
 --- !u!114 &2873883590340473371
 MonoBehaviour:
   m_ObjectHideFlags: 0

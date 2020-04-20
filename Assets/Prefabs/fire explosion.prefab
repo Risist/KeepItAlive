@@ -28,7 +28,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 512
-  m_ForceMagnitude: 1500
+  m_ForceMagnitude: 1200
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -75,8 +75,8 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
   damageDataContinous:
-    damage: 2.25
-    staggerIncrease: 1
+    damage: 1.25
+    staggerIncrease: 0.75
     damageType: 1
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}

@@ -11,6 +11,8 @@ public class Arrow : MonoBehaviour
         data.direction = (transform.position - col.transform.position).normalized;
         data.position = (transform.position);
         data.staggerIncrease = 0.3f;
-        col.GetComponent<IDamagable>().DealDamage(data);
+        var hp = col.GetComponent<IDamagable>();
+        
+        hp.DealDamage(data);
     }
 }

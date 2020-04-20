@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6492002707073816354}
   - component: {fileID: 6492002707073816355}
   - component: {fileID: 6492002707073816380}
-  - component: {fileID: 6492002707073816376}
+  - component: {fileID: 6554557496418915438}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -163,9 +163,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.06772994, y: 0.30154294}
+  m_Size: {x: 0.2, y: 0.33}
   m_EdgeRadius: 0
---- !u!114 &6492002707073816376
+--- !u!114 &6554557496418915438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 6492002707073816377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a64d8ce7dcc0e4063bf186546dc019ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cb7462de24fcb34095a105f5c5bb2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
+  requiredMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  damageDataOnce:
+    damage: 10
+    staggerIncrease: 1
+    damageType: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataContinous:
+    damage: 0
+    staggerIncrease: 0
+    damageType: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataEnter:
+    damage: 0
+    staggerIncrease: 0
+    damageType: 0
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}

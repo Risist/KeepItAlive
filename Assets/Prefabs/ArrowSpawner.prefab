@@ -98,6 +98,4 @@ MonoBehaviour:
   isSpawning: 0
   spawnable: {fileID: 6492002707073816355, guid: c7fdb991f4a332e49972f49aa8a9982a,
     type: 3}
-  spawnPoint: {x: -1.49, y: -6.66, z: 0}
-  spawnTarget: {x: -1.4581413, y: 2.1822462, z: 0}
-  velocity: 15
+  velocity: 50
