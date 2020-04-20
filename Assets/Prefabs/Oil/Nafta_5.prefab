@@ -5022,7 +5022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredMask:
     serializedVersion: 2
-    m_Bits: 6912
+    m_Bits: 7936
   damageDataOnce:
     damage: 0
     staggerIncrease: 0

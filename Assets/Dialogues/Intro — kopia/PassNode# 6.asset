@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218255098f23662858c3b778b77d8758, type: 3}
-  m_Name: PassNode#
+  m_Name: PassNode# 6
   m_EditorClassIdentifier: 
-  text: What you see is left from demon cat cult trying to summon their terrible
-    father.
-  nextNode: {fileID: 11400000, guid: 90780b9900520df9b80b9d4f4714cac1, type: 2}
+  text: Go and kill some red eyed
+  nextNode: {fileID: 11400000, guid: 139c6183c668a2f4db5910ce62b55992, type: 2}

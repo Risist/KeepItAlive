@@ -153,8 +153,9 @@ public class DevilController : MonoBehaviour
             .SetReturnState(tChangeState.IsReady)
             .SetGetNextState(stateMachine.GetNextStateByUtility)
 
-            .SetCanEnter(() => blackboard.player != null && blackboard.bCommandAttack)
-            .SetUtility(() =>  500.0f )
+            .SetCanEnter(() => blackboard.player != null && 
+                               (blackboard.bCommandAttack || IsCloseTo(blackboard.player.transform.position, 5)))
+            .SetUtility(() => blackboard.bCommandAttack ? 500.0f : 250.0f)
             ;
 
         var stateAttackLight = stateMachine.AddNewState()
