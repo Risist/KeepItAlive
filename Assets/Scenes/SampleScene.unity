@@ -4392,6 +4392,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 277518468}
+    - target: {fileID: 8574495367389117556, guid: 296b81dc7b177824aba956fbd7bfee01,
+        type: 3}
+      propertyPath: shakeLerp
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574495367389117556, guid: 296b81dc7b177824aba956fbd7bfee01,
+        type: 3}
+      propertyPath: shakeDrag
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8574495367389117557, guid: 296b81dc7b177824aba956fbd7bfee01,
         type: 3}
       propertyPath: m_LocalPosition.x

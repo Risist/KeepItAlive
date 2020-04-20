@@ -129,6 +129,18 @@ MonoBehaviour:
   spreadLayer:
     serializedVersion: 2
     m_Bits: 4096
+--- !u!114 &5840510198559480686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588674444485563043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad2c39aab73bb94ab9cf9d5dcaf7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4670180573415263103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,6 +269,12 @@ PrefabInstance:
 --- !u!4 &2966449595702980403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7630542854949102668, guid: 48b493fa0dcb318499f526439a7151a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4670180573415263103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8588674444485563043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4034883987625302492, guid: 48b493fa0dcb318499f526439a7151a0,
     type: 3}
   m_PrefabInstance: {fileID: 4670180573415263103}
   m_PrefabAsset: {fileID: 0}

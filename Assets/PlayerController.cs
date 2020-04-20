@@ -25,7 +25,14 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponentInParent<Animator>();
         var health = GetComponentInParent<HealthController>();
-        health.onStaggerCallback += (data) => { animator.SetTrigger("Stagger"); };
+        var cameraController = Camera.main.GetComponent<CameraController>();
+        health.onStaggerCallback += (data) =>
+        {
+            //cameraController.ApplyShake(data.damage*5);
+            animator.SetTrigger("Stagger");
+        };
+
+        health.onDamageCallback += (data) => { cameraController.ApplyShake(data.damage * 2.5f); };
     }
 
     private void Update()

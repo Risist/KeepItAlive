@@ -391,7 +391,7 @@ MonoBehaviour:
     direction: {x: 0, y: 0, z: 0}
   damageDataContinous:
     damage: 0.5
-    staggerIncrease: 0.25
+    staggerIncrease: 3
     damageType: 0
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
