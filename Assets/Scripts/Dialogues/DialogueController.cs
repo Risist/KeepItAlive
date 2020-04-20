@@ -29,7 +29,7 @@ public class DialogueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentlyShown)
+        if (currentlyShown && player)
             currentlyShown.SetActive(((Vector2)player.transform.position - (Vector2)transform.position).magnitude < triggerDist);
     }
     public void Attach(DialoguePanel dp) {
