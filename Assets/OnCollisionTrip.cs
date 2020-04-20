@@ -7,14 +7,18 @@ public class OnCollisionTrip : MonoBehaviour
 
     Mechanism mecha;
     public float resetTime;
-
+    public bool blocked = false;
     void Start() {
         mecha = GetComponent<Mechanism>();
     }
 
 
     void OnTriggerEnter2D(Collider2D c) {
-        mecha.trip();
+        if (!blocked)
+        {
+            blocked = true;
+            mecha.trip();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D c) {

@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4986779077073819175}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.6038537, y: 4.24976, z: 11.193728}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4986779077181470992}
@@ -90,8 +90,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4986779077181470995}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.2, y: 23.6, z: -11.193728}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4986779077266369403}
@@ -111,10 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb6c28f2d1d8e326a2ef4515378539d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 895836ca4029c420e870feac3880434c, type: 2}
+  tree: {fileID: 11400000, guid: e9bbbc6e165aa95da9e591eb41a04a17, type: 2}
   canvas: {fileID: 4986779077266369402}
   player: {fileID: 0}
-  triggerDist: 10
+  triggerDist: 8
   nextPanelPrefab: {fileID: 2908822506212238065, guid: 8be97be8d6401ffe1942cb4bc1d4fd60,
     type: 3}
   splitPanelPrefab: {fileID: 4276242484571511721, guid: 963ed4b16c0429ed7b1aa3e4851ad375,
@@ -122,7 +122,7 @@ MonoBehaviour:
   actionPanelPrefab: {fileID: 5751313183409113487, guid: db112196ba270c27fa792aca7ec7bb5e,
     type: 3}
   textcolor: {r: 1, g: 1, b: 1, a: 1}
-  bgcolor: {r: 0.84011215, g: 0.8459547, b: 0.8773585, a: 1}
+  bgcolor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4986779077266369383
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4986779077266369383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 11.193728}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4986779077181470992}
@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -17.45, y: -2.45}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!223 &4986779077266369402
