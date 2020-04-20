@@ -4,7 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Mechanism))]
 public class OnCollisionTrip : MonoBehaviour
 {
+
     Mechanism mecha;
+    public float resetTime;
+
     void Start() {
         mecha = GetComponent<Mechanism>();
     }
