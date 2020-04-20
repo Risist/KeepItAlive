@@ -21,6 +21,6 @@ public class SpawnOnDeath : MonoBehaviour
     void Spawn()
     {
         int id = Random.Range(0, objectsToSpawn.Length);
-        var obj = Instantiate(objectsToSpawn[id], transform.position + spawnPointOffset, Quaternion.Euler(0, 0, Random.value * 360));
+        var obj = Instantiate(objectsToSpawn[id], transform.position + spawnPointOffset, transform.rotation);
     }
 }

@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 8360392163476462372}
   - component: {fileID: 8864296910490909316}
   - component: {fileID: 4873182278817112964}
+  - component: {fileID: 681198679129552967}
   m_Layer: 9
   m_Name: small devil
   m_TagString: Untagged
@@ -803,8 +804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0f65a6838b398409a1cc7d13d378c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 15
-  maxHealth: 15
+  currentHealth: 30
+  maxHealth: 30
   destroyOnDeath: 1
   tResetStagger:
     cd: 1
@@ -929,3 +930,18 @@ AudioReverbFilter:
   m_LFReference: 250
   m_ReflectionsDelay: 0.013
   m_ReverbPreset: 9
+--- !u!114 &681198679129552967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765956112993629758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a809fb0e11be9bf46950e10e0d7a3ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToSpawn:
+  - {fileID: 8765956112993629758, guid: 36631335d1dffc944b7ad961fa5a50d6, type: 3}
+  spawnPointOffset: {x: 0, y: 0, z: 0}

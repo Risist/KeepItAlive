@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : Spawnable
+public class Arrow : MonoBehaviour
 {
     public bool isPiercing;
 
-    public override void SetupLiftime()
-    {
-        DefaultLifetime();
-    }
-
     void OnCollisionEnter2D(Collision2D collision) {
-        if(!isPiercing) Destroy(gameObject);
+        //if(!isPiercing && collision.gameObject.GetComponent<HealthController>() != null) Destroy(gameObject);
     }
-    void OnTriggerEnter2D(Collision2D collision){ 
-    
+    void OnTriggerEnter2D(Collider2D collision){
+        //if (!isPiercing && collision.gameObject.GetComponent<HealthController>() != null ) Destroy(gameObject);
     }
 }

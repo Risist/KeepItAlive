@@ -6,8 +6,9 @@ public class Spawner : MonoBehaviour
 {
     public float spawnRate;
     public bool isSpawning;
-    public Spawnable spawnable;
-   /// public Vector3 spawnPoint;
+    public GameObject prefab;
+    public float lifetime;
+
     public float velocity;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,12 @@ public class Spawner : MonoBehaviour
 
     }
     public void Spawn() { // for trigger once, this is ignoring checking isSpawning
-        spawnable.spawn(transform.position, velocity * transform.up,transform.up);
+
+        var obj = Instantiate(prefab, transform.position, transform.rotation);
+
+        Destroy(obj, lifetime);
+
+        Rigidbody2D rigid = obj.GetComponent<Rigidbody2D>();
+        rigid.velocity = velocity * transform.up;
     }
 }

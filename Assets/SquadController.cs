@@ -49,7 +49,6 @@ public class SquadController : MonoBehaviour
         {
             tOffense.Restart();
             blackboard.bCommandAttack = true;
-            Debug.Log("offense");
         }
 
 

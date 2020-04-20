@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: 0, y: 0, z: -5}
-  followFactor: 0.01
-  maxDifference: Infinity
+  followFactor: 0.015
+  maxDifference: 8
   shakeDrag: 0.95
   shakeLerp: 0.05

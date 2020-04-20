@@ -120,6 +120,7 @@ public class DevilController : MonoBehaviour
             .SetGetNextState(stateMachine.GetNextStateByUtility)
 
             .SetCanEnter(() => blackboard.player != null)
+            .SetUtility(() => 2)
             ;
 
         var stateAttack = stateMachine.AddNewState()
@@ -258,16 +259,12 @@ public class DevilController : MonoBehaviour
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13) 
                 
                 && !blackboard.bCommandAttack )
             .SetReturnState(tChangeState.IsReady)
             .SetGetNextState(stateMachine.GetNextStateByUtility)
-            .SetUtility(() => 20);
+            .SetUtility(() => 30f);
         ;
 
         var stateStayCloseToPlayer = stateMachine.AddNewState()

@@ -1516,8 +1516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0f65a6838b398409a1cc7d13d378c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 60
-  maxHealth: 60
+  currentHealth: 30
+  maxHealth: 30
   destroyOnDeath: 1
   tResetStagger:
     cd: 1
@@ -1834,7 +1834,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 512
-  m_ForceMagnitude: 800
+  m_ForceMagnitude: 400
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -1898,7 +1898,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3127277483276456750, guid: 48b493fa0dcb318499f526439a7151a0,
     type: 3}
   tExplosion:
-    cd: 0.15
+    cd: 0.2
   fadeoutCost: 3
   minExplosionFadeout: 0.05
 --- !u!114 &5531979029692885363
@@ -1923,8 +1923,8 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
   damageDataContinous:
-    damage: 0.5
-    staggerIncrease: 0.5
+    damage: 1
+    staggerIncrease: 0.1
     damageType: 1
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
@@ -2772,7 +2772,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 512
-  m_ForceMagnitude: 800
+  m_ForceMagnitude: 400
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -2810,7 +2810,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3127277483276456750, guid: 48b493fa0dcb318499f526439a7151a0,
     type: 3}
   tExplosion:
-    cd: 0.15
+    cd: 0.2
   fadeoutCost: 3
   minExplosionFadeout: 0.05
 --- !u!114 &2702165751770928017
@@ -2835,8 +2835,8 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
   damageDataContinous:
-    damage: 0.5
-    staggerIncrease: 0.5
+    damage: 1
+    staggerIncrease: 0.1
     damageType: 1
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}

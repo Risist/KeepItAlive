@@ -29,6 +29,11 @@ public class OilController : MonoBehaviour, IDamagable
     private void FixedUpdate()
     {
         light.intensity = Mathf.Lerp(light.intensity, desiredLightIntensity, lightLerp);
+        if (!particleSystem.isEmitting)
+        {
+            particleSystem.gameObject.SetActive(false);
+            desiredLightIntensity = 0;
+        }
     }
 
     void SpreadFire()
@@ -64,11 +69,6 @@ public class OilController : MonoBehaviour, IDamagable
         Invoke("SpreadFire", spreadFireDelay);
     }
 
-    public void OnParticleSystemStopped()
-    {
-        particleSystem.gameObject.SetActive(false);
-        desiredLightIntensity = 0;
-    }
 
     private void OnDrawGizmosSelected()
     {
