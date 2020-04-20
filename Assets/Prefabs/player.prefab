@@ -384,7 +384,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.7545167, b: 0.48584908, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 4
+  m_PointLightOuterRadius: 7
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -1516,12 +1516,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0f65a6838b398409a1cc7d13d378c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 30
-  maxHealth: 30
+  currentHealth: 50
+  maxHealth: 50
   destroyOnDeath: 1
   tResetStagger:
     cd: 1
-  staggerLimit: 3
+  staggerLimit: 5
   staggerLevel: 0
 --- !u!95 &2105827142606614642
 Animator:
@@ -1898,8 +1898,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3127277483276456750, guid: 48b493fa0dcb318499f526439a7151a0,
     type: 3}
   tExplosion:
-    cd: 0.2
-  fadeoutCost: 3
+    cd: 0.075
+  fadeoutCost: 2
   minExplosionFadeout: 0.05
 --- !u!114 &5531979029692885363
 MonoBehaviour:
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeoutTimer:
     cd: 200
-  initialLight: 0
+  initialLight: 1
   autoRestart: 0
   minLightDistance: 0.5
 --- !u!1 &4154697041303690274
@@ -2810,8 +2810,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3127277483276456750, guid: 48b493fa0dcb318499f526439a7151a0,
     type: 3}
   tExplosion:
-    cd: 0.2
-  fadeoutCost: 3
+    cd: 0.075
+  fadeoutCost: 2
   minExplosionFadeout: 0.05
 --- !u!114 &2702165751770928017
 MonoBehaviour:
@@ -2886,7 +2886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeoutTimer:
     cd: 200
-  initialLight: 0
+  initialLight: 1
   autoRestart: 0
   minLightDistance: 0.5
 --- !u!1 &7221450875715590954

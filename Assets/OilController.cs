@@ -31,8 +31,12 @@ public class OilController : MonoBehaviour, IDamagable
         light.intensity = Mathf.Lerp(light.intensity, desiredLightIntensity, lightLerp);
         if (!particleSystem.isEmitting)
         {
-            particleSystem.gameObject.SetActive(false);
             desiredLightIntensity = 0;
+        }
+
+        if (!particleSystem.IsAlive())
+        {
+            particleSystem.gameObject.SetActive(false);
         }
     }
 

@@ -47,21 +47,22 @@ public class HealthController : MonoBehaviour, IDamagable
         }
 
         if(staggerLevel >= staggerLimit)
-        {
+        {   
             staggerLevel -= staggerLimit;
             onStaggerCallback(data);
         }
 
-        if (currentHealth > 0)
+        if (currentHealth > 0 && onDamageCallback != null)
             onDamageCallback(data);
         else if (!destroyed)
         {
-            onDeathCallback(data);
+            if (onDeathCallback != null)
+                onDeathCallback(data);
             destroyed = true;
         }
     }
 
-    private void Start()
+    void Start()
     {
         onStaggerCallback += (DamageData data) => { };
         onDamageCallback += (DamageData data) => { };

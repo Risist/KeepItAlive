@@ -44,7 +44,7 @@ public class DevilController : MonoBehaviour
         health = GetComponent<HealthController>();
         speach = GetComponent<AudioSource>();
         speach.pitch = Random.Range(1.2f, 1.65f);
-        health.onStaggerCallback = (data) =>
+        health.onStaggerCallback += (data) =>
         {
             animator.SetTrigger("Stagger");
         };
@@ -292,53 +292,76 @@ public class DevilController : MonoBehaviour
 
             .SetCanEnter(() =>
                 // repeat to ensure that random will catch up some lights
-                (LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
-                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6  )
+                (LightMarker.GetDistanceSqToRandomLight(transform.position) < 4 * 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4 ||
+                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 4* 4  )
                 && blackboard.bCommandAttack
                  )
             .SetReturnState(tChangeState.IsReady)

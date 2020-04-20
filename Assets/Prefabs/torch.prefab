@@ -231,6 +231,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5087527
       objectReference: {fileID: 0}
+    - target: {fileID: 4444302000339354477, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444302000339354477, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6289630634492613566, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
         type: 3}
       propertyPath: m_Name
