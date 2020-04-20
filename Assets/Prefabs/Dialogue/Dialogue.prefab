@@ -122,7 +122,7 @@ MonoBehaviour:
   actionPanelPrefab: {fileID: 5751313183409113487, guid: db112196ba270c27fa792aca7ec7bb5e,
     type: 3}
   textcolor: {r: 1, g: 1, b: 1, a: 1}
-  bgcolor: {r: 0, g: 0.15871048, b: 1, a: 1}
+  bgcolor: {r: 0.84011215, g: 0.8459547, b: 0.8773585, a: 1}
 --- !u!1 &4986779077266369383
 GameObject:
   m_ObjectHideFlags: 0

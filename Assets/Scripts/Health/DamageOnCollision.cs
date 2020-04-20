@@ -7,10 +7,12 @@ public class DamageOnCollision : MonoBehaviour
     /// To prevent multiplay hit counts per attack this list will keep track of targets already damaged
     /// So they wont be damaged anymore unless next attack sequence occurs
     List<IDamagable> damaged = new List<IDamagable>();
+    public LayerMask requiredMask = ~0;
 
     public DamageData damageDataOnce;
     public DamageData damageDataContinous;
     public DamageData damageDataEnter;
+
 
     Vector2 lastPosition;
     private void FixedUpdate()
@@ -22,6 +24,9 @@ public class DamageOnCollision : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!enabled)
+            return;
+
+        if ((requiredMask.value & (1 << other.gameObject.layer)) == 0)
             return;
 
         var damagable = other.GetComponent<IDamagable>();
@@ -39,6 +44,9 @@ public class DamageOnCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!enabled)
+            return;
+
+        if ((requiredMask.value & (1 << other.gameObject.layer)) == 0)
             return;
 
         var damagable = other.GetComponent<IDamagable>();
@@ -59,6 +67,9 @@ public class DamageOnCollision : MonoBehaviour
         if (!enabled)
             return;
 
+        if ((requiredMask.value & (1 << collision.gameObject.layer)) == 0)
+            return;
+
         var damagable = collision.gameObject.GetComponent<IDamagable>();
         damageDataEnter.position = transform.position;
         damageDataContinous.position = transform.position;
@@ -73,6 +84,9 @@ public class DamageOnCollision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!enabled)
+            return;
+
+        if ((requiredMask.value & (1 << collision.gameObject.layer)) == 0)
             return;
 
         var damagable = collision.gameObject.GetComponent<IDamagable>();

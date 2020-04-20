@@ -8,6 +8,8 @@ public class LightFadeout : MonoBehaviour
     /// when timer is ready light completely fades out
     /// so cd is just a time light has till fadeout
     public Timer fadeoutTimer;
+    [Range(0, 1)] public float initialLight = 0.0f;
+    public bool autoRestart;
     [Range(0, 1)] public float minLightDistance;
     ParticleSystem particle;
     new Light2D light;
@@ -23,7 +25,7 @@ public class LightFadeout : MonoBehaviour
 
     public float fadeoutPercent
     {
-        get { return 1 - fadeoutTimer.GetCompletionPercent(); }
+        get { return Mathf.Clamp01(1 - fadeoutTimer.GetCompletionPercent()); }
     }
 
     void Start()
@@ -36,13 +38,21 @@ public class LightFadeout : MonoBehaviour
         initialParticleRate = emission.rateOverTimeMultiplier;
         initialLightDistance = light.pointLightOuterRadius;
         
-        Debug.Log("rate: " + initialParticleRate + ", intensity: " + initialLightIntensity);
+        //Debug.Log("rate: " + initialParticleRate + ", intensity: " + initialLightIntensity);
 
         fadeoutTimer.Restart();
+
+        fadeoutTimer.actualTime =
+            Mathf.Lerp(fadeoutTimer.actualTime, fadeoutTimer.actualTime - fadeoutTimer.cd, initialLight);
     }
 
     private void FixedUpdate()
     {
+        if (autoRestart)
+        {
+            fadeoutTimer.Restart();
+        }
+
         float percent = fadeoutPercent;
         //percent = Mathf.Sqrt(percent);
         
@@ -51,7 +61,7 @@ public class LightFadeout : MonoBehaviour
         emission.rateOverTimeMultiplier = initialParticleRate * percent;
         light.pointLightOuterRadius = initialLightDistance * Mathf.Lerp(1.0f,percent, minLightDistance);
 
-        Debug.Log("percent:" + percent + ", rate: " + emission.rateOverTimeMultiplier + ", intensity: " + light.intensity);
+        //Debug.Log("percent:" + percent + ", rate: " + emission.rateOverTimeMultiplier + ", intensity: " + light.intensity);
         light.intensity = initialLightIntensity * percent;
     }
 }
