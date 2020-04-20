@@ -132,5 +132,5 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -5}
   followFactor: 0.015
   maxDifference: 8
-  shakeDrag: 0.95
-  shakeLerp: 0.05
+  shakeDrag: 0.8
+  shakeLerp: 0.15

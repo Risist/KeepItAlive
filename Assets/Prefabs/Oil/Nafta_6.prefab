@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8715673586908346468}
   - component: {fileID: 8720362175803174783}
   - component: {fileID: 5670828123973678827}
+  - component: {fileID: 4323460245520819379}
   m_Layer: 12
   m_Name: Nafta_6
   m_TagString: Untagged
@@ -129,6 +130,39 @@ MonoBehaviour:
   spreadLayer:
     serializedVersion: 2
     m_Bits: 4096
+--- !u!114 &4323460245520819379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433843462692163864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb7462de24fcb34095a105f5c5bb2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  damageDataOnce:
+    damage: 0
+    staggerIncrease: 0
+    damageType: 1
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataContinous:
+    damage: 3
+    staggerIncrease: 2
+    damageType: 1
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+  damageDataEnter:
+    damage: 0
+    staggerIncrease: 0
+    damageType: 1
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
 --- !u!114 &5840510198559480686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -2898767906597023502, guid: 48b493fa0dcb318499f526439a7151a0, type: 3}
+    - {fileID: 3081394861795444791, guid: 48b493fa0dcb318499f526439a7151a0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48b493fa0dcb318499f526439a7151a0, type: 3}
 --- !u!4 &2966449595702980403 stripped
 Transform:

@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &705828777666973858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648378037887652593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad2c39aab73bb94ab9cf9d5dcaf7df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6911115432450955556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470174269121058819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e689498e2e788794b8917b31f33871f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeoutTimer:
+    cd: 200
+  initialLight: 1
+  autoRestart: 1
+  minLightDistance: 0.5
 --- !u!1 &4840905648109629192
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,35 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myFadeout: {fileID: 6911115432450955556}
   damageUnlitScale: 10
---- !u!114 &6911115432450955556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470174269121058819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e689498e2e788794b8917b31f33871f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeoutTimer:
-    cd: 200
-  initialLight: 1
-  autoRestart: 1
-  minLightDistance: 0.5
---- !u!114 &705828777666973858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648378037887652593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad2c39aab73bb94ab9cf9d5dcaf7df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4840905646951467965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -229,6 +229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5087527
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444302000339354477, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6289630634492613566, guid: bb516137a3ad9fb478a2ea7671a3dcb2,
         type: 3}

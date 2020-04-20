@@ -124,7 +124,7 @@ public class DevilController : MonoBehaviour
             ;
 
         var stateAttack = stateMachine.AddNewState()
-            .AddOnBegin(() => tChangeState.RestartRandom(1.25f, 2.5f))
+            .AddOnBegin(() => tChangeState.RestartRandom(0.75f, 1.0f))
             .AddOnUpdate(() => {
                 
                 RandomBlink(0.00075f);
@@ -154,7 +154,7 @@ public class DevilController : MonoBehaviour
             .SetGetNextState(stateMachine.GetNextStateByUtility)
 
             .SetCanEnter(() => blackboard.player != null && blackboard.bCommandAttack)
-            .SetUtility(() =>  850.0f )
+            .SetUtility(() =>  500.0f )
             ;
 
         var stateAttackLight = stateMachine.AddNewState()
@@ -197,7 +197,7 @@ public class DevilController : MonoBehaviour
                      LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13) &&
 
                      blackboard.bCommandAttack)
-                .SetUtility(() => 50.0f)
+                .SetUtility(() => 300.0f)
             ;
 
         var stateAwayFromPlayer = stateMachine.AddNewState()
@@ -260,11 +260,90 @@ public class DevilController : MonoBehaviour
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13) 
-                
-                && !blackboard.bCommandAttack )
+                && !blackboard.bCommandAttack
+                 )
             .SetReturnState(tChangeState.IsReady)
             .SetGetNextState(stateMachine.GetNextStateByUtility)
             .SetUtility(() => 30f);
+        ;
+
+        var stateAwayFromLightOffense = stateMachine.AddNewState()
+            .AddOnBegin(() => tChangeState.RestartRandom(0.5f, 1.5f))
+            .AddOnBegin(() => blackboard.destination = (Vector2)transform.position + LightMarker.GetFleeDir(transform.position).normalized * 15)
+            .AddOnUpdate(() =>
+            {
+                Vector2 fleeDir = LightMarker.GetFleeDir(transform.position).normalized;
+                Debug.DrawRay(transform.position, fleeDir * 5, Color.green);
+
+                Vector2 destination = (Vector2)transform.position + fleeDir * 5;
+                Debug.DrawLine(destination, destination + Vector2.up, Color.cyan);
+
+
+                Talk();
+                MoveTo(blackboard.destination, 20, 1);
+                RotateTo(blackboard.destination, 0.1f);
+
+                RandomDash(0.00025f);
+
+                Avoid(5, 3);
+                Avoid(4, 5);
+                Avoid(3, 6);
+            })
+
+            .SetCanEnter(() =>
+                // repeat to ensure that random will catch up some lights
+                (LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 6 * 6  )
+                && blackboard.bCommandAttack
+                 )
+            .SetReturnState(tChangeState.IsReady)
+            .SetGetNextState(stateMachine.GetNextStateByUtility)
+            .SetUtility(() =>  10000.0f);
         ;
 
         var stateStayCloseToPlayer = stateMachine.AddNewState()

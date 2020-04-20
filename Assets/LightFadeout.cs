@@ -52,16 +52,18 @@ public class LightFadeout : MonoBehaviour
         {
             fadeoutTimer.Restart();
         }
+        else
+        {
+            float percent = fadeoutPercent;
+            //percent = Mathf.Sqrt(percent);
 
-        float percent = fadeoutPercent;
-        //percent = Mathf.Sqrt(percent);
-        
-        var emission = particle.emission;
+            var emission = particle.emission;
 
-        emission.rateOverTimeMultiplier = initialParticleRate * percent;
-        light.pointLightOuterRadius = initialLightDistance * Mathf.Lerp(1.0f,percent, minLightDistance);
+            emission.rateOverTimeMultiplier = initialParticleRate * percent;
+            light.pointLightOuterRadius = initialLightDistance * Mathf.Lerp(1.0f, percent, minLightDistance);
 
-        //Debug.Log("percent:" + percent + ", rate: " + emission.rateOverTimeMultiplier + ", intensity: " + light.intensity);
-        light.intensity = initialLightIntensity * percent;
+            //Debug.Log("percent:" + percent + ", rate: " + emission.rateOverTimeMultiplier + ", intensity: " + light.intensity);
+            light.intensity = initialLightIntensity * percent;
+        }
     }
 }
