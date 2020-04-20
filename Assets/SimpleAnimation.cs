@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class SimpleAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public SpriteRenderer sprite;
+    public Sprite[] animations;
+    float timePerFrame;
+
+    public void toAnimationFrame(int index) {
+        sprite.sprite = animations[(animations.Length + (index %animations.Length)) % animations.Length];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
