@@ -26,13 +26,18 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInParent<Animator>();
         var health = GetComponentInParent<HealthController>();
         var cameraController = Camera.main.GetComponent<CameraController>();
+        var audioSource = GetComponentInParent<AudioSource>();
         health.onStaggerCallback += (data) =>
         {
             //cameraController.ApplyShake(data.damage*5);
             animator.SetTrigger("Stagger");
+            audioSource.Play();
         };
 
-        health.onDamageCallback += (data) => { cameraController.ApplyShake(data.damage * 2.5f); };
+        health.onDamageCallback += (data) =>
+        {
+            cameraController.ApplyShake(data.damage * 2.5f);
+        };
     }
 
     private void Update()

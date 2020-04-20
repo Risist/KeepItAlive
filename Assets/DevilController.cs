@@ -259,6 +259,32 @@ public class DevilController : MonoBehaviour
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
+                LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13 ||
                 LightMarker.GetDistanceSqToRandomLight(transform.position) < 13 * 13) 
                 && !blackboard.bCommandAttack
                  )

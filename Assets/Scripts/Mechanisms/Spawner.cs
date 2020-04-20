@@ -8,11 +8,13 @@ public class Spawner : MonoBehaviour
     public bool isSpawning;
     public GameObject prefab;
     public float lifetime;
+    AudioSource audio;
 
     public float velocity;
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         StartCoroutine(spawn());
     }
 
@@ -30,6 +32,7 @@ public class Spawner : MonoBehaviour
         var obj = Instantiate(prefab, transform.position, transform.rotation);
 
         Destroy(obj, lifetime);
+        audio.Play();
 
         Rigidbody2D rigid = obj.GetComponent<Rigidbody2D>();
         rigid.velocity = velocity * transform.up;
