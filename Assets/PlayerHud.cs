@@ -31,5 +31,8 @@ public class PlayerHud : MonoBehaviour
     {
         fillFireLitLeft.fillAmount = fadeout[0].fadeoutPercent;
         fillFireLitRight.fillAmount = fadeout[1].fadeoutPercent;
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 }
