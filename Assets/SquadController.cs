@@ -42,6 +42,9 @@ public class SquadController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!player)
+            return;
+
         if (!spawned && Vector2.Distance(player.position, transform.position) < playerDistanceToSpawn)
         {
             spawned = true;

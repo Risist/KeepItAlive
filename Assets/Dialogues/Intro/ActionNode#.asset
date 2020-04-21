@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999cfae4a43f480c68865d4075a32ccc, type: 3}
   m_Name: ActionNode#
   m_EditorClassIdentifier: 
-  text: You must keep your flames alive or else foes will overwhelm you.
+  text: Mabe their blood will let us finish ritual
   action:
     m_PersistentCalls:
       m_Calls: []

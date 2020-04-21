@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999cfae4a43f480c68865d4075a32ccc, type: 3}
-  m_Name: ActionNode#
+  m_Script: {fileID: 11500000, guid: f3b696258e8f1ea448343366fd283536, type: 3}
+  m_Name: Root
   m_EditorClassIdentifier: 
-  text: Mabe their blood will let us finish ritual
-  action:
-    m_PersistentCalls:
-      m_Calls: []
+  nextNode: {fileID: 11400000, guid: 46146b8f17f9d524a85c5f1838f1ae7b, type: 2}

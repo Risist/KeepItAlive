@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218255098f23662858c3b778b77d8758, type: 3}
-  m_Name: PassNode# 1
+  m_Script: {fileID: 11500000, guid: 999cfae4a43f480c68865d4075a32ccc, type: 3}
+  m_Name: ActionNode#
   m_EditorClassIdentifier: 
-  text: Ohh crap!!
-  nextNode: {fileID: 11400000, guid: 07378f0881117114fbf48ac85fbc39b4, type: 2}
+  text: Whatever you choose you can always press SHIFT to dash forward
+  action:
+    m_PersistentCalls:
+      m_Calls: []
