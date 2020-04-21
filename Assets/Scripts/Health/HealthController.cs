@@ -38,7 +38,7 @@ public class HealthController : MonoBehaviour, IDamagable
     public void DealDamage(DamageData data)
     {
         currentHealth -= data.damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, -float.MaxValue, maxHealth);
         staggerLevel += data.staggerIncrease;
 
 
